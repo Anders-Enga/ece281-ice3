@@ -75,15 +75,17 @@ begin
 	w_A   <= sw(4 downto 1);       -- Map switches for A
 	w_B   <= sw(15 downto 12);     -- Map switches for B
 	w_Cin <= sw(0);                -- Map carry in switch
-	
+
 	-- Instantiate
 	U1 : ripple_adder port map (
-		A    => w_A,
-		B    => w_B,
-		Cin  => w_Cin,
-		S    => w_Sum,
-		Cout => w_Cout
+	A    => w_A,
+	B    => w_B,
+	Cin  => w_Cin,
+	S    => w_Sum,
+	Cout => w_Cout
 	);
+	
+
 	
 	-- CONCURRENT STATEMENTS --------
 	led(3 downto 0)  <= w_Sum;           -- Display sum bits on LEDs
